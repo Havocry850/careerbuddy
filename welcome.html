@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome - CareerBuddy</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(rgba(144, 238, 144, 0.9), rgba(144, 238, 144, 0.9)), 
+                  url('https://images.pexels.com/photos/6285159/pexels-photo-6285159.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .welcome-box {
+      background: rgba(0, 100, 0, 0.6);
+      padding: 40px 30px;
+      border-radius: 10px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .welcome-box h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .welcome-box p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+
+    .welcome-box button {
+      padding: 12px 25px;
+      background: #004d00;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .welcome-box button:hover {
+      background: #007300;
+    }
+
+    .app-name {
+      position: absolute;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      font-weight: 600;
+      color: rgb(91, 255, 3);
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ------------------- DARK MODE ------------------- */
+    .dark-mode {
+      background: #121212 !important;
+      background-image: none !important;
+      color: white;
+    }
+
+    .dark-mode .welcome-box {
+      background: rgba(30, 30, 30, 0.95);
+      color: #fff;
+    }
+
+    .dark-mode .welcome-box button {
+      background: #1e8e3e;
+    }
+
+    .dark-mode .app-name {
+      color: #9effa6;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-name">CareerBuddy</div>
+
+  <div class="welcome-box">
+    <h2>Welcome to CareerBuddy</h2>
+    <p>Ready to explore your skills?<br/>Take this career assessment.</p>
+    <button onclick="goToAssessment()">Start</button>
+  </div>
+
+  <script>
+    function goToAssessment() {
+      window.location.href = 'skill_assessment.html';
+    }
+
+    // Apply dark mode if stored
+    window.onload = function () {
+      const isDarkMode = localStorage.getItem('darkModeEnabled') === 'true';
+      if (isDarkMode) {
+        document.body.classList.add('dark-mode');
+      }
+    };
+  </script>
+</body>
+</html>
